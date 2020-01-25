@@ -1,0 +1,13 @@
+clc;
+close all;
+clear;
+I = double(imread('resim1.jpg'));
+X = reshape(I,size(I,1)*size(I,2),3);
+coeff = pca(X);
+Itransformed = X*coeff;
+Ipc1 = reshape(Itransformed(:,1),size(I,1),size(I,2));
+Ipc2 = reshape(Itransformed(:,2),size(I,1),size(I,2));
+Ipc3 = reshape(Itransformed(:,3),size(I,1),size(I,2));
+subplot(3,2,1), imshow(Ipc1,[]);
+subplot(3,2,2), imshow(Ipc2,[]);
+subplot(3,2,3), imshow(Ipc3,[]);

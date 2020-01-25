@@ -1,0 +1,16 @@
+clc;
+close all;
+clear;
+workspace;
+figure;
+im = imread('resim1.jpg'); 
+gray=rgb2gray(im);
+bw=imbinarize(gray, 0.4);
+subplot(1,2,1);
+imshow(bw, []);
+%verticalProfile = sum(bw, 2);
+horizontalProfile = sum(bw, 1); 
+subplot(1,2,2);
+bar(horizontalProfile); 
+%figure; 
+%barh(verticalProfile);
